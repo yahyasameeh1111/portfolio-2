@@ -63,73 +63,31 @@ export default function App() {
       <main className="relative z-10 pt-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         
         {/* HERO SECTION */}
-        <section className="min-h-[85vh] flex flex-col lg:flex-row items-center justify-between gap-12 py-12 relative">
+        <section className="min-h-[85vh] flex flex-col items-center justify-center py-12 relative">
           
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="flex-1 space-y-8 relative z-10"
-          >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-cyber-orange animate-pulse" />
-              <span className="font-mono text-[10px] text-gray-300 tracking-widest uppercase">Available for new opportunities</span>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="font-mono text-cyber-orange text-xs md:text-sm tracking-widest uppercase flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span>BCA Student</span>
-              <span className="text-gray-600">•</span>
-              <span>Cybersecurity Enthusiast</span>
-              <span className="text-gray-600">•</span>
-              <span>Ethical Hacker</span>
-            </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-[5rem] font-extrabold text-white tracking-tighter leading-[1.05]">
-              Learning how <br/>
-              <span className="text-gradient-primary text-glow">systems work.</span>
-            </motion.h1>
-
-            <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl text-gray-400 font-medium tracking-tight">
-              Understanding how they can be secured.
-            </motion.h2>
-
-            <motion.p variants={fadeInUp} className="text-gray-500 max-w-xl text-lg leading-relaxed">
-              I'm a BCA student exploring cybersecurity, ethical hacking, networking, Linux and technology through hands-on learning and projects.
-            </motion.p>
-
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="#projects" className="bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 group">
-                View Projects <ArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" size={18} />
-              </a>
-              <a href="#about" className="glass-card hover:bg-white/10 text-white px-8 py-4 rounded-full font-semibold transition-all text-center flex items-center justify-center gap-2">
-                Explore Journey
-              </a>
-            </motion.div>
-          </motion.div>
-
           {/* Hero Visual: Terminal Image Container */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="flex-1 w-full max-w-lg hidden lg:block relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="w-full max-w-3xl relative flex flex-col items-center"
           >
             {/* Glowing effect behind the terminal */}
-            <div className="absolute inset-0 bg-cyber-orange/20 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-cyber-orange/20 blur-[120px] rounded-full pointer-events-none" />
             
-            <div className="glass-card rounded-xl overflow-hidden border border-white/10 shadow-2xl relative z-10 group hover:-translate-y-2 transition-transform duration-500">
+            <div className="glass-card w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative z-10 group hover:-translate-y-2 transition-transform duration-500">
               {/* Terminal Header */}
-              <div className="bg-[#121214] px-4 py-3 flex items-center gap-2 border-b border-white/5 relative z-20">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="bg-[#121214] px-4 py-4 flex items-center gap-2 border-b border-white/5 relative z-20">
+                <div className="flex gap-2">
+                  <div className="w-3.5 h-3.5 rounded-full bg-red-500/80" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-yellow-500/80" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-green-500/80" />
                 </div>
-                <div className="text-xs font-mono text-gray-500 ml-4 flex-1 text-center pr-10">yahya@portfolio:~</div>
+                <div className="text-sm font-mono text-gray-500 ml-4 flex-1 text-center pr-10">yahya@portfolio:~</div>
               </div>
               
               {/* Terminal Body / Image */}
-              <div className="relative w-full h-[400px] bg-[#0a0a0a] overflow-hidden flex flex-col items-center justify-center">
+              <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] bg-[#0a0a0a] overflow-hidden flex flex-col items-center justify-center">
                 <img 
                   src="/profile.png" 
                   alt="Yahya Sameeh" 
@@ -141,14 +99,28 @@ export default function App() {
                 
                 {/* Fallback if image not found */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-gray-500 z-0">
-                  <User size={48} className="mb-4 text-cyber-orange/50" />
-                  <p className="text-sm font-mono">Place your image here</p>
-                  <p className="text-xs mt-2">Save as <code className="text-cyber-orange">profile.png</code><br/>in the <code className="text-cyber-orange">public/</code> folder</p>
+                  <User size={64} className="mb-4 text-cyber-orange/50" />
+                  <p className="text-base font-mono">Place your image here</p>
+                  <p className="text-sm mt-2">Save as <code className="text-cyber-orange">profile.png</code><br/>in the <code className="text-cyber-orange">public/</code> folder</p>
                 </div>
               </div>
             </div>
-          </motion.div>
 
+            {/* Action Buttons Centered Below */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 pt-12 relative z-20"
+            >
+              <a href="#projects" className="bg-white text-black hover:bg-gray-200 px-10 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 group">
+                View Projects <ArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" size={18} />
+              </a>
+              <a href="#about" className="glass-card hover:bg-white/10 text-white px-10 py-4 rounded-full font-semibold transition-all text-center flex items-center justify-center gap-2">
+                Explore Journey
+              </a>
+            </motion.div>
+          </motion.div>
         </section>
 
         {/* BENTO GRID: ABOUT & SKILLS */}

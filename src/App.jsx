@@ -309,9 +309,6 @@ export default function App() {
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 Every skill is another piece of the bigger picture. My goal is to build strong technical foundations, gain real-world experience, and develop a career focused on ethical hacking and defensive security.
               </p>
-              <a href="mailto:#" className="inline-flex items-center gap-2 bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-full font-semibold transition-all">
-                <Mail size={18} /> Let's connect
-              </a>
             </div>
 
             <div className="flex-1 relative border-l border-white/10 ml-4 space-y-12 pb-8">
@@ -328,6 +325,37 @@ export default function App() {
                 Exploring Databases, SQL, JavaScript, Dart, and Flutter.
               </TimelineItem>
             </div>
+          </div>
+        </section>
+
+        {/* CONTACT SECTION */}
+        <section id="contact" className="py-24 border-t border-white/5">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Let's connect.</h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-lg">
+                I'm always interested in learning, building projects, exploring cybersecurity and connecting with people in technology.
+              </p>
+            </motion.div>
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="grid grid-cols-2 gap-4">
+              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                <Github size={24} className="text-gray-400 group-hover:text-white transition-colors" />
+                <span className="font-semibold text-white">GitHub</span>
+              </a>
+              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                <Linkedin size={24} className="text-gray-400 group-hover:text-[#0a66c2] transition-colors" />
+                <span className="font-semibold text-white">LinkedIn</span>
+              </a>
+              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                <Mail size={24} className="text-gray-400 group-hover:text-cyber-orange transition-colors" />
+                <span className="font-semibold text-white">Email</span>
+              </a>
+              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group border-cyber-orange/20 hover:border-cyber-orange/50">
+                <FileText size={24} className="text-cyber-orange" />
+                <span className="font-semibold text-white">Resume</span>
+              </a>
+            </motion.div>
           </div>
         </section>
 

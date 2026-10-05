@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Network, Server, Code, Lock, Cpu, Github, Linkedin, Mail, FileText, ChevronRight, ExternalLink, Download, Moon, ArrowUpRight, GraduationCap, Target } from 'lucide-react';
+import { Terminal, Shield, Network, Server, Code, Lock, Cpu, Github, Linkedin, Mail, FileText, ChevronRight, ExternalLink, Download, Moon, ArrowUpRight, GraduationCap, Target, Instagram } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -339,15 +339,15 @@ export default function App() {
             </motion.div>
 
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="grid grid-cols-2 gap-4">
-              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+              <a href="https://github.com/yahyasameeh1111" target="_blank" rel="noreferrer" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
                 <Github size={24} className="text-gray-400 group-hover:text-white transition-colors" />
                 <span className="font-semibold text-white">GitHub</span>
               </a>
-              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
-                <Linkedin size={24} className="text-gray-400 group-hover:text-[#0a66c2] transition-colors" />
-                <span className="font-semibold text-white">LinkedIn</span>
+              <a href="https://www.instagram.com/yyeyy_yyaaa/" target="_blank" rel="noreferrer" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+                <Instagram size={24} className="text-gray-400 group-hover:text-[#E1306C] transition-colors" />
+                <span className="font-semibold text-white">Instagram</span>
               </a>
-              <a href="#" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
+              <a href="mailto:yahyasameeh1111@gmail.com" className="glass-card flex items-center justify-center gap-3 p-6 rounded-2xl hover:bg-white/5 transition-colors group">
                 <Mail size={24} className="text-gray-400 group-hover:text-cyber-orange transition-colors" />
                 <span className="font-semibold text-white">Email</span>
               </a>
@@ -365,8 +365,8 @@ export default function App() {
       <footer className="border-t border-white/5 py-12 mt-12 text-center relative z-10 bg-[#050505]">
         <div className="font-mono text-cyber-orange font-bold text-xl mb-4 tracking-tighter">YAHYA SAMEEH PP</div>
         <div className="flex justify-center gap-4 mb-6">
-          <a href="#" className="p-2 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full"><Github size={18} /></a>
-          <a href="#" className="p-2 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full"><Linkedin size={18} /></a>
+          <a href="https://github.com/yahyasameeh1111" target="_blank" rel="noreferrer" className="p-2 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full"><Github size={18} /></a>
+          <a href="https://www.instagram.com/yyeyy_yyaaa/" target="_blank" rel="noreferrer" className="p-2 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full"><Instagram size={18} /></a>
         </div>
         <div className="text-gray-400 italic mb-6">"Learning. Building. Securing."</div>
         <div className="text-gray-600 text-sm">© 2026 Yahya Sameeh PP</div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Network, Server, Code, Lock, Cpu, Github, Linkedin, Mail, FileText, ChevronRight, ExternalLink, Download, Moon, ArrowUpRight, GraduationCap, Target, Instagram } from 'lucide-react';
+import { Terminal, Shield, Network, Server, Code, Lock, Cpu, Github, Linkedin, Mail, FileText, ChevronRight, ExternalLink, Download, Moon, ArrowUpRight, GraduationCap, Target, Instagram, User } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -107,40 +107,38 @@ export default function App() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Visual: Terminal Window replacing the giant shield */}
+          {/* Hero Visual: Profile Image */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="flex-1 w-full max-w-lg hidden lg:block"
+            className="flex-1 w-full max-w-md hidden lg:flex justify-center relative"
           >
-            <div className="glass-card rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <div className="bg-[#121214] px-4 py-3 flex items-center gap-2 border-b border-white/5">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="text-xs font-mono text-gray-500 ml-4 flex-1 text-center pr-10">yahya@portfolio:~</div>
-              </div>
-              <div className="p-6 font-mono text-sm space-y-4">
-                <div>
-                  <span className="text-cyber-orange">❯</span> <span className="text-blue-400">whoami</span>
-                  <div className="text-gray-300 mt-1">yahya_sameeh</div>
-                </div>
-                <div>
-                  <span className="text-cyber-orange">❯</span> <span className="text-blue-400">cat</span> education.txt
-                  <div className="text-gray-300 mt-1">BCA Student @ ISS Arts and Science College</div>
-                </div>
-                <div>
-                  <span className="text-cyber-orange">❯</span> <span className="text-blue-400">sudo</span> load_skills --category="security"
-                  <div className="text-gray-400 mt-1 animate-pulse">Loading modules...</div>
-                  <div className="text-green-400 mt-1">[OK] Linux Fundamentals</div>
-                  <div className="text-green-400">[OK] Networking Basics</div>
-                  <div className="text-green-400">[OK] Ethical Hacking Foundations</div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-cyber-orange">❯</span> <span className="w-2 h-4 bg-gray-400 animate-pulse" />
+            {/* Glowing effect behind the image */}
+            <div className="absolute inset-0 bg-cyber-orange/20 blur-[100px] rounded-full pointer-events-none" />
+            
+            {/* Image Container */}
+            <div className="relative w-[320px] h-[400px] rounded-2xl overflow-hidden glass-card border border-white/10 p-2 shadow-[0_0_50px_rgba(255,77,0,0.15)] group hover:-translate-y-2 transition-transform duration-500">
+              <div className="w-full h-full rounded-xl overflow-hidden bg-[#0a0a0a] relative flex flex-col items-center justify-center">
+                
+                {/* 
+                  Drop your image file named 'profile.png' into the 'public' folder 
+                  It will automatically replace this fallback! 
+                */}
+                <img 
+                  src="/profile.png" 
+                  alt="Yahya Sameeh" 
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+                
+                {/* Fallback if image not found */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-gray-500 z-0">
+                  <User size={48} className="mb-4 text-cyber-orange/50" />
+                  <p className="text-sm font-mono">Place your image here</p>
+                  <p className="text-xs mt-2">Save as <code className="text-cyber-orange">profile.png</code><br/>in the <code className="text-cyber-orange">public/</code> folder</p>
                 </div>
               </div>
             </div>

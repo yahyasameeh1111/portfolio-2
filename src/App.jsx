@@ -107,28 +107,33 @@ export default function App() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Visual: Profile Image */}
+          {/* Hero Visual: Terminal Image Container */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="flex-1 w-full max-w-md hidden lg:flex justify-center relative"
+            className="flex-1 w-full max-w-lg hidden lg:block relative"
           >
-            {/* Glowing effect behind the image */}
+            {/* Glowing effect behind the terminal */}
             <div className="absolute inset-0 bg-cyber-orange/20 blur-[100px] rounded-full pointer-events-none" />
             
-            {/* Image Container */}
-            <div className="relative w-[320px] h-[400px] rounded-2xl overflow-hidden glass-card border border-white/10 p-2 shadow-[0_0_50px_rgba(255,77,0,0.15)] group hover:-translate-y-2 transition-transform duration-500">
-              <div className="w-full h-full rounded-xl overflow-hidden bg-[#0a0a0a] relative flex flex-col items-center justify-center">
-                
-                {/* 
-                  Drop your image file named 'profile.png' into the 'public' folder 
-                  It will automatically replace this fallback! 
-                */}
+            <div className="glass-card rounded-xl overflow-hidden border border-white/10 shadow-2xl relative z-10 group hover:-translate-y-2 transition-transform duration-500">
+              {/* Terminal Header */}
+              <div className="bg-[#121214] px-4 py-3 flex items-center gap-2 border-b border-white/5 relative z-20">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                </div>
+                <div className="text-xs font-mono text-gray-500 ml-4 flex-1 text-center pr-10">yahya@portfolio:~</div>
+              </div>
+              
+              {/* Terminal Body / Image */}
+              <div className="relative w-full h-[400px] bg-[#0a0a0a] overflow-hidden flex flex-col items-center justify-center">
                 <img 
                   src="/profile.png" 
                   alt="Yahya Sameeh" 
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10"
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out z-10"
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}
